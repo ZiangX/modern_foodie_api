@@ -3,7 +3,11 @@
     <div class="container">
         <div id="display">
             <div id="productName">
-                <h1>Category: {{category.category_name}}</h1>
+                <h1>Category: {{category.category_name_zh}}</h1>
+                <h1>Category: {{category.category_name_en}}</h1>
+                <h1>Category: {{category.category_name_fr}}</h1>
+                <img src={{url_for('static', filename='uploads/'+category.category_img) }} id="categoryImage"/>
+
             </div>
         </div>
           <div>

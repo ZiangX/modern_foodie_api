@@ -1,20 +1,55 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="container">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
 
                 <div class="form-group">
-                    {{ form.category_name.label }}
-                    {% if form.category_name.errors %}
-                        {{ form.category_name(class="form-control form-control-lg is-invalid") }}
+                    {{ form.category_img.label }}
+                    {{ form.category_img(class="form-control-file") }}
+                    {% if form.category_img.errors %}
+                        {% for error in form.category_img.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.category_name_zh.label }}
+                    {% if form.category_name_zh.errors %}
+                        {{ form.category_name_zh(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.category_name.errors %}
+                            {% for error in form.category_name_zh.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.category_name}}
+                        {{ form.category_name_zh}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.category_name_en.label }}
+                    {% if form.category_name_en.errors %}
+                        {{ form.category_name_en(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.category_name_en.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.category_name_en}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.category_name_fr.label }}
+                    {% if form.category_name_fr.errors %}
+                        {{ form.category_name_fr(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.category_name_fr.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.category_name_fr}}
                     {% endif %}
                 </div>
                 <div class="form-group">

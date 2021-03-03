@@ -14,7 +14,7 @@
 
 	{% if not loggedIn %}
 	<div id="signInButton">
-		<a class="link" href="/signIn">Sign In</a>
+		<a class="link" href="/signInAdmin">Sign In</a>
 	</div>
 	{% else %}
 	<div class="dropdown">
@@ -23,7 +23,7 @@
 			<a href="/account/orders">Your orders</a>
 			<a href="/account/profile">Your profile</a>
 			<hr>
-			<a href="/logout">Sign Out</a>
+			<a href="/logoutAdmin">Sign Out</a>
 		</div>
 	</div>
 	{% endif %}
@@ -54,8 +54,8 @@
 		<tr id="productImage">
 			{% for row in itemData %}
 			<td>
-				<a href="/productDescription?productId={{row.productid}}">
-					<img src={{ url_for('static', filename='uploads/' + row.image) }} id="itemImage" />
+				<a href="/product?productId={{row.productid}}">
+					<img src={{ url_for('static', filename='uploads/' + row.category_img) }} id="itemImage" />
 				</a>
 			</td>
 			{% endfor %}

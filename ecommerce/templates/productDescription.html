@@ -14,7 +14,7 @@
 
 	{% if not loggedIn %}
 	<div id="signInButton">
-		<a class="link" href="/signIn">Sign In</a>
+		<a class="link" href="/signInAdmin">Sign In</a>
 	</div>
 	{% else %}
 	<div class="dropdown">
@@ -23,7 +23,7 @@
 			<a href="/account/orders">Your orders</a>
 			<a href="/account/profile">Your profile</a>
 			<hr>
-			<a href="/logout">Sign Out</a>
+			<a href="/logoutAdmin">Sign Out</a>
 		</div>
 	</div>
 	{% endif %}

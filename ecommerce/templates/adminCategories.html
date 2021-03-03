@@ -7,7 +7,9 @@
         <table class="table table-hover">
           <thead>
             <tr>
-                <th>Category Name</th>
+                <th>Category Name zh</th>
+                <th>Category Name en</th>
+                <th>Category Name fr</th>
                 <th>Number of products</th>
                 <th>Actions</th>
             </tr>
@@ -15,7 +17,10 @@
             <tbody>
               {% for category in categories %}
                 <tr>
-                  <td>{{ category.category_name}}</td>
+                  <td>{{ category.category_name_zh}}</td>
+                  <td>{{ category.category_name_en}}</td>
+                  <td>{{ category.category_name_fr}}</td>
+                  <td><img src={{url_for('static', filename='uploads/'+category.category_img) }} id="productImage"/></td>
                   <td>{{ category.noOfProducts }}</td>
                   <td><a href="{{ url_for('category', category_id=category.categoryid) }}" class="btn btn-primary btn-sm m-1">View</a></td>
                 </tr>
