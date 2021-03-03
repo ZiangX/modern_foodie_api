@@ -1,5 +1,5 @@
 from datetime import datetime
-from ecommerce import db
+from routes import db
 
 db.Model.metadata.reflect(db.engine)
 
@@ -121,16 +121,16 @@ class OrderedProduct(db.Model):
     #     return f"Order('{self.ordproductid}', '{self.orderid}','{self.productid}','{self.quantity}')"
 
 
-class SaleTransaction(db.Model):
-    __table_args__ = {'extend_existing': True}
-    transactionid = db.Column(db.Integer, primary_key=True)
-    orderid = db.Column(db.Integer, db.ForeignKey(
-        'order.orderid'), nullable=False)
-    transaction_date = db.Column(db.DateTime, nullable=False)
-    amount = db.Column(db.FLOAT, nullable=False)
-    cc_number = db.Column(db.String(50), nullable=False)
-    cc_type = db.Column(db.String(50), nullable=False)
-    response = db.Column(db.String(50), nullable=False)
+# class SaleTransaction(db.Model):
+#     __table_args__ = {'extend_existing': True}
+#     transactionid = db.Column(db.Integer, primary_key=True)
+#     orderid = db.Column(db.Integer, db.ForeignKey(
+#         'order.orderid'), nullable=False)
+#     transaction_date = db.Column(db.DateTime, nullable=False)
+#     amount = db.Column(db.FLOAT, nullable=False)
+#     cc_number = db.Column(db.String(50), nullable=False)
+#     cc_type = db.Column(db.String(50), nullable=False)
+#     response = db.Column(db.String(50), nullable=False)
 
-    # def __repr__(self):
-    #     return f"Order('{self.transactionid}', '{self.orderid}','{self.transactiondate}','{self.amount}', '{self.cc_number}','{self.cc_type}','{self.response}')"
+#     # def __repr__(self):
+#     #     return f"Order('{self.transactionid}', '{self.orderid}','{self.transactiondate}','{self.amount}', '{self.cc_number}','{self.cc_type}','{self.response}')"

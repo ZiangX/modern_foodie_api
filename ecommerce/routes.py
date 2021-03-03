@@ -8,15 +8,35 @@ from datetime import datetime, timedelta
 from functools import wraps
 from PIL import Image
 from flask import (render_template, request, jsonify, g, session)
-from ecommerce import app
-from ecommerce.forms import *
-from plotly.offline import plot
-import plotly.graph_objs as go
+# from ecommerce import app
+# from forms import *
 from flask import Markup
-from ecommerce.models import *
+# from models import *
 
 
-app.config['SECRET_KEY'] = 'thisissecret'
+# app.config['SECRET_KEY'] = 'thisissecret'
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+# from flask_mysqldb import MySQL
+import yaml
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Nulifendou8!@localhost/ecommerce'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+bcrypt = Bcrypt(app)
+app.secret_key = 'random string'
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = set(['jpeg', 'jpg', 'png', 'gif'])
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+from models import *
+# db.create_all()
+db.create_all()
+from forms import *
 
 # @app.before_request
 # def load_logged_in_user():  # You can name whatever you want for the function name
@@ -664,3 +684,6 @@ def getUsers():
         # users = cur.fetchall()
         return render_template('adminUsers.html', users=users)
     return redirect(url_for('loginAdmin'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

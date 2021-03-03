@@ -11,7 +11,7 @@ from flask_wtf.file import FileField, FileAllowed
 from wtforms.validators import DataRequired, Length, Email, Optional
 from wtforms import MultipleFileField
 
-from ecommerce.models import *
+from models import *
 # from ecommerce import mysql
 
 
@@ -226,35 +226,6 @@ class addProductForm(FlaskForm):
     product_imgs = MultipleFileField('Product Images', validators=[
         FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Save')
-
-
-# flask form for checkout details
-class checkoutForm(FlaskForm):
-    fullname = StringField('Full Name',
-                           validators=[DataRequired(), Length(min=2, max=20)])
-    email = StringField('Email',
-                        validators=[DataRequired(), Email()])
-    address = TextAreaField('address',
-                            validators=[DataRequired()])
-    city = StringField('city',
-                       validators=[DataRequired(), Length(min=2, max=20)])
-    state = StringField('state',
-                        validators=[DataRequired(), Length(min=2, max=20)])
-    zip = StringField('zip',
-                      validators=[DataRequired(), Length(min=2, max=6)])
-    cctype = RadioField('cardtype')
-    cardname = StringField('cardnumber',
-                           validators=[DataRequired(), Length(min=12, max=12)])
-    ccnumber = StringField('Credit card number',
-                           validators=[DataRequired()])
-
-    expmonth = StringField('Exp Month',
-                           validators=[DataRequired(), Length(min=12, max=12)])
-    expyear = StringField('Expiry Year',
-                          validators=[DataRequired(), Length(min=4, max=4)])
-    cvv = StringField('CVV',
-                      validators=[DataRequired(), Length(min=3, max=4)])
-    submit = SubmitField('MAKE PAYMENT')
 
 
 # Gets form data for the sales transaction
