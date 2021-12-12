@@ -14,6 +14,7 @@ def send_code(current_user):
     target_phone, message = request.get_json().get("phone"), request.get_json().get("message")
     print('info', target_phone, message)
 
+    # TODO https://mail.google.com/mail/u/0/#inbox/FMfcgzGllMQwdrcpmdLDnRPTNwQmgzTq: Need to replace a new token since the old one was exposed
     account_sid = 'AC50f2794d189a34c9d2e4955a8b2b743f' 
     auth_token = 'c63951b66b7fea3ae00bbdc6465a227d'
     client = Client(account_sid, auth_token) 
