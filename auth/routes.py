@@ -68,8 +68,9 @@ def login_admin():
         email = request.form['email']
         password = request.form['password']
         if is_valid(email, password):
+            session['email'] = email
             if isUserAdmin():
-                session['email'] = email
+                # session['email'] = email
                 return redirect(url_for('users.admin_dashboard'))
             return 'You are not an admin'
         else:
