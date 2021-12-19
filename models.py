@@ -8,7 +8,7 @@ class User(db.Model):
 
     # nullable default is true, unique is false
     userid = db.Column(db.Integer, primary_key=True)
-    public_id = db.Column(db.String(50), unique=True)
+    public_id = db.Column(db.String(50), unique=True, nullable=False)
     username = db.Column(db.String(40), nullable=False)
     fname = db.Column(db.String(20), nullable=True)
     lname = db.Column(db.String(20), nullable=True)
@@ -20,7 +20,7 @@ class User(db.Model):
     postcode = db.Column(db.String(20), unique=False, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     # When ppl remove the phone, we need to allow many empty string fields exisiting at the same time
-    phone = db.Column(db.String(20), unique=False, nullable=True)
+    phone = db.Column(db.Integer, unique=False, nullable=True)
     created_on = db.Column(db.DateTime, nullable=False,
                            default=datetime.utcnow)
 
@@ -45,7 +45,7 @@ class Category(db.Model):
     category_name_en = db.Column(db.String(100), nullable=False)
     category_name_fr = db.Column(db.String(100), nullable=False)
     category_img = db.Column(
-        db.String(50), nullable=True, default='default.jpg')
+        db.String(50), nullable=True)
     date_posted = db.Column(db.DateTime, nullable=False,
                             default=datetime.utcnow)
 
@@ -68,20 +68,22 @@ class Product(db.Model):
 
 class ProductCategory(db.Model):
     __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
     categoryid = db.Column(db.Integer, db.ForeignKey(
-        'category.categoryid'), nullable=False, primary_key=True)
+        'category.categoryid'), nullable=False)
     productid = db.Column(db.Integer, db.ForeignKey(
-        'product.productid'), nullable=False, primary_key=True)
+        'product.productid'), nullable=False)
     created_on = db.Column(db.DateTime, nullable=False,
                            default=datetime.utcnow)
 
 
 class Cart(db.Model):
     __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
     userid = db.Column(db.Integer, db.ForeignKey(
-        'user.userid'), nullable=False, primary_key=True)
+        'user.userid'), nullable=False)
     productid = db.Column(db.Integer, db.ForeignKey(
-        'product.productid'), nullable=False, primary_key=True)
+        'product.productid'), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
