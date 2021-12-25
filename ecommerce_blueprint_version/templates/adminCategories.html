@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <div class="col-4">
+    <a href="{{ url_for('categories.addCategory') }}" class="btn btn-success m-5">Add a New Category</a>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Category Name zh</th>
+        <th>Category Name en</th>
+        <th>Category Name fr</th>
+        <th>Img</th>
+        <!-- <th>Number of products</th> -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category in categories %}
+      <tr>
+        <td>{{ category.category_name_zh}}</td>
+        <td>{{ category.category_name_en}}</td>
+        <td>{{ category.category_name_fr}}</td>
+        <td><img src="{{url_for('static', filename='uploads/'+category.category_img) }}" id="productImage" /></td>
+        <!-- <td>{{ category.noOfProducts }}</td> -->
+        <td><a href="{{ url_for('categories.category', category_id=category.categoryid) }}" class="btn btn-primary btn-sm m-1">View</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
