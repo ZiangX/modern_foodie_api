@@ -30,7 +30,7 @@ def user_info(current_user):
         # If adding .first(), it wont work, since the update property dont work with that
         User.query.filter_by(userid=current_user.userid).update(newUserInfo)
         db.session.commit()
-        return "user_info_updated", 200
+        return "updated", 200
 
 # Since for the admin side, users cannot be verified by tokens like the frontend. 
 # The session could be the way to verify users role

@@ -29,7 +29,7 @@ def register():
 
     # Prevent someone create account from postman and crash the server
     if not username or not email or not password:
-        return 'Please fill out the form', 400
+        return 'form_incomplete', 400
 
     if User.query.filter(User.email == email).first():
         return 'email_taken', 400
@@ -96,8 +96,8 @@ def update_password(current_user):
     if userValidation:
         current_user.password = hashlib.md5(newPassword.encode()).hexdigest()
         db.session.commit()
-        return "Update successfully", 200
-    return "Old password is not correct", 401
+        return "updated", 200
+    return "old_password_incorrect", 401
 
 
 # When user forgets their pwd
