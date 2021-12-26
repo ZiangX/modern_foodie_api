@@ -21,6 +21,8 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     # When ppl remove the phone, we need to allow many empty string fields exisiting at the same time
     phone = db.Column(db.Integer, unique=False, nullable=True)
+    phone_verification_code = db.Column(db.Integer, unique=False, nullable=True)
+    phone_verification_code_sent_time = db.Column(db.DateTime, unique=False, nullable=True)
     created_on = db.Column(db.DateTime, nullable=False,
                            default=datetime.utcnow)
 
