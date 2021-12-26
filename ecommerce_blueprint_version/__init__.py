@@ -1,8 +1,11 @@
+import sentry_sdk
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 # from flask_login import LoginManager
 from flask_mail import Mail
+from sentry_sdk.integrations.flask import FlaskIntegration
+
 from ecommerce_blueprint_version.config import Config
 
 
@@ -12,6 +15,18 @@ bcrypt = Bcrypt()
 # login_manager.login_view = 'auth.login'
 # login_manager.login_message_category = 'info'
 mail = Mail()
+
+
+# Add error logging tools
+# sentry_sdk.init(
+#     dsn="https://d6f275ba557c461eb46cea97882583cb@o1094374.ingest.sentry.io/6113391",
+#     integrations=[FlaskIntegration()],
+
+#     # Set traces_sample_rate to 1.0 to capture 100%
+#     # of transactions for performance monitoring.
+#     # We recommend adjusting this value in production.
+#     traces_sample_rate=1.0
+# )
 
 
 def create_app(config_class=Config):
@@ -50,3 +65,6 @@ def create_app(config_class=Config):
         return response
     
     return app
+
+# Create all models, but generated tables does not setup foreign keys properly
+# db.create_all(app=create_app())
