@@ -24,7 +24,7 @@ class addProductForm(FlaskForm):
     productVariant4 = StringField('Product variant 4:', validators=[Optional()])
     productVariant5 = StringField('Product variant 5:', validators=[Optional()])
     productQuantity = IntegerField(
-        'Product Quantity:', validators=[DataRequired()])
+        'Product Quantity:')
     product_imgs = MultipleFileField('Product Images', validators=[
         FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Save')
