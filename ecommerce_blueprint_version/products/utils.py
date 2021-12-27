@@ -19,10 +19,10 @@ def getProductByProductId(productId):
 def getProductsByCategoryId(categoryId):
     products_by_categoryId = Product.query.join(ProductCategory, Product.productid == ProductCategory.productid) \
         .join(Category, Category.categoryid == ProductCategory.categoryid) \
+        .add_columns(Category.categoryid, Category.category_name_zh, Category.category_name_en, Category.category_name_fr, Category.category_img) \
         .filter(Category.categoryid == int(categoryId)) \
         .all()
     return products_by_categoryId
-        # .add_columns(Category.categoryid, Category.category_name_zh, Category.category_name_en, Category.category_name_fr, Category.category_img) \
 
 
 def getPriceRangeFromVariants(variants):

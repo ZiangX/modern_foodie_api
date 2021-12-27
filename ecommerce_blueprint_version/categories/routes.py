@@ -29,6 +29,7 @@ def get_categories_for_client():
 def get_category_and_products_for_client():
     categoryId = request.args.get("categoryId")
 
+    # Only get the category with products added
     products_by_categoryId = getProductsByCategoryId(categoryId)
 
     print("products_by_categoryId", products_by_categoryId)
@@ -36,6 +37,7 @@ def get_category_and_products_for_client():
     # Get products data saved in the res object
     products = []
     for product in products_by_categoryId:
+        product = product[0]
         # Retrive the price range from variants, if the price is none
         if product.price is None:
             variants = json.loads(product.variants)
@@ -47,7 +49,12 @@ def get_category_and_products_for_client():
             "product_name_fr": product.product_name_fr, "price": price, "imgs": json.loads(product.product_imgs)
         })
 
-    return jsonify({"products": products}), 200
+    if len(products_by_categoryId) > 0:
+        category = {"id": products_by_categoryId[0][1], "category_name_zh": products_by_categoryId[0][2], "category_name_en": products_by_categoryId[0][3],
+         "category_name_fr": products_by_categoryId[0][4], "imgs": products_by_categoryId[0][5], "products": products}
+    else:
+        category = {}
+    return jsonify({"category": category}), 200
 
 
 @categories.route("/admin/category/<int:category_id>")
