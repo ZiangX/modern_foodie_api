@@ -26,7 +26,7 @@ def productsClient():
             variants = json.loads(product.variants)
             price = getPriceRangeFromVariants(variants)
         else:
-            price = str(product.price)
+            price = product.price
 
         # This api request doesn't need all detail of a product
         products.append({"id": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en, 
@@ -47,7 +47,7 @@ def productClient():
         variants = json.loads(product.variants)
         price = getPriceRangeFromVariants(variants)
     else:
-        price = str(product.price)
+        price = product.price
 
     productDetail = {
         "productid": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en,
