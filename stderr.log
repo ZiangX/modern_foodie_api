@@ -3157,3 +3157,206 @@ products_by_categoryId [<Product 2>, <Product 3>]
 products_by_categoryId [<Product 2>, <Product 3>]
 [<Category 2>, <Category 3>]
 products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+session <SecureCookieSession {'email': 'ziangxuu@gmail.com'}>
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 3>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg'), (<Product 4>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variants []
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variants []
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 4>, 2, '海鲜', 'Seafood', 'Fruit de mer', '8f312b7d6bfab576.jpg')]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [(<Product 2>, 3, '新鲜水果', 'Fresh fruits', 'Fruits frais', 'acbc4cd28d796fe7.jpg'), (<Product 3>, 3, '新鲜水果', 'Fresh fruits', 'Fruits frais', 'acbc4cd28d796fe7.jpg')]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+
+
+
+
+
+variants []
+[<Category 2>, <Category 3>]
+products_by_categoryId []
+[<Category 2>, <Category 3>]
+[UID:4682][2485744] Child process with pid: 2485779 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-27 20:45:17,073] ERROR in app: Exception on /product [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/products/routes.py", line 45, in productClient
+    if product.price is None:
+AttributeError: 'NoneType' object has no attribute 'price'
