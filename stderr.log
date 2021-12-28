@@ -1663,3 +1663,1497 @@ products_by_categoryId []
 session <SecureCookieSession {}>
 session <SecureCookieSession {}>
 session <SecureCookieSession {}>
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 09:14:20,971] ERROR in app: Exception on /categories [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/categories/routes.py", line 16, in get_categories_for_client
+    original_format_categories = Category.query.all()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 09:15:04,784] ERROR in app: Exception on /categories [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/categories/routes.py", line 16, in get_categories_for_client
+    original_format_categories = Category.query.all()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 09:16:32,706] ERROR in app: Exception on /categories [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/categories/routes.py", line 16, in get_categories_for_client
+    original_format_categories = Category.query.all()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 09:17:10,228] ERROR in app: Exception on /categories [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/categories/routes.py", line 16, in get_categories_for_client
+    original_format_categories = Category.query.all()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 09:33:11,785] ERROR in app: Exception on /categories [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/categories/routes.py", line 16, in get_categories_for_client
+    original_format_categories = Category.query.all()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3373, in all
+    return list(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2021-12-26 09:33:55,778] ERROR in app: Exception on /login-admin [POST]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/routes.py", line 70, in login_admin
+    if is_valid(email, password):
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/utils.py", line 35, in is_valid
+    user = User.query.filter(User.email == email).first()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3429, in first
+    ret = list(self[0:1])
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
+    return list(res)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2021-12-26 09:35:38,306] ERROR in app: Exception on /login-admin [POST]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/routes.py", line 70, in login_admin
+    if is_valid(email, password):
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/utils.py", line 35, in is_valid
+    user = User.query.filter(User.email == email).first()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3429, in first
+    ret = list(self[0:1])
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
+    return list(res)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+[2021-12-26 09:35:43,960] ERROR in app: Exception on /login-admin [POST]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/routes.py", line 70, in login_admin
+    if is_valid(email, password):
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/auth/utils.py", line 35, in is_valid
+    user = User.query.filter(User.email == email).first()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3429, in first
+    ret = list(self[0:1])
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3203, in __getitem__
+    return list(res)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3535, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3557, in _execute_and_instances
+    querycontext, self._connection_from_session, close_with_result=True
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3572, in _get_bind_args
+    mapper=self._bind_mapper(), clause=querycontext.statement, **kw
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3550, in _connection_from_session
+    conn = self.session.connection(**kw)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1145, in connection
+    execution_options=execution_options,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1151, in _connection_for_bind
+    engine, execution_options
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 433, in _connection_for_bind
+    conn = bind._contextual_connect()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2302, in _contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2340, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1584, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 2336, in _wrap_pool_connect
+    return fn()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 364, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 778, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 495, in checkout
+    rec = pool._do_get()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 140, in _do_get
+    self._dec_overflow()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/impl.py", line 137, in _do_get
+    return self._create_connection()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 309, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 440, in __init__
+    self.__connect(first_connect_check=True)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/pool/base.py", line 656, in __connect
+    connection = pool._invoke_creator(self)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/strategies.py", line 114, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 509, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/__init__.py", line 123, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/MySQLdb/connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (2002, "Can't connect to MySQL server on '127.0.0.1' (115)")
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+session <SecureCookieSession {}>
+session <SecureCookieSession {}>
+session <SecureCookieSession {}>
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+session <SecureCookieSession {}>
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[UID:4682][3707870] Child process with pid: 3707917 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+products_by_categoryId []
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[UID:4682][3907672] Child process with pid: 3907724 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>]
+products_by_categoryId [<Product 2>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+products_by_categoryId [<Product 2>]
+[UID:4682][4166710] Child process with pid: 4166742 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variantRaw 
+variants []
+[UID:4682][49912] Child process with pid: 49944 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+products_by_categoryId [<Product 2>, <Product 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[2021-12-26 21:34:08,535] ERROR in app: Exception on /product [GET]
+Traceback (most recent call last):
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/greedprp/mypythonapp/ecommerce_blueprint_version/products/routes.py", line 45, in productClient
+    if product.price is None:
+AttributeError: 'NoneType' object has no attribute 'price'
+[UID:4682][294168] Child process with pid: 294196 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[UID:4682][357807] Child process with pid: 357917 was killed by signal: 9, core dump: 0
+[UID:4682][357807] Child process with pid: 357918 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+[<Category 2>]
+[<Category 2>]
+[<Category 2>]
+[<Category 2>]
+[UID:4682][541120] Child process with pid: 541173 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+[<Category 2>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>]
+[<Category 2>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[UID:4682][3779736] Child process with pid: 3779845 was killed by signal: 9, core dump: 0
+[UID:4682][3806458] Child process with pid: 3806696 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[UID:4682][3927072] Child process with pid: 3927092 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[UID:4682][59319] Child process with pid: 59355 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[UID:4682][78634] Child process with pid: 78677 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[UID:4682][227428] Child process with pid: 227503 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+products_by_categoryId []
+products_by_categoryId [<Product 2>, <Product 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[UID:4682][347227] Child process with pid: 347274 was killed by signal: 9, core dump: 0
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+[<Category 2>, <Category 3>]
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+/home/greedprp/virtualenv/mypythonapp/3.7/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+[<Category 2>, <Category 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
+[<Category 2>, <Category 3>]
+products_by_categoryId [<Product 2>, <Product 3>]
