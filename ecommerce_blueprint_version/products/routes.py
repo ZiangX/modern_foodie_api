@@ -29,9 +29,10 @@ def productsClient():
             price = str(product.price)
 
         # This api request doesn't need all detail of a product
-        products.append({"id": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en, "product_name_fr": product.product_name_fr,
-                         "price": price, "imgs": json.loads(product.product_imgs)
-                         })
+        products.append({"id": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en, 
+            "product_name_fr": product.product_name_fr, "description_zh": product.description_zh, "description_en": product.description_en, 
+            "description_fr": product.description_fr, "price": price, "imgs": json.loads(product.product_imgs), "variants": json.loads(product.variants)
+            })
 
     return jsonify({"products": products}), 200
 
