@@ -21,9 +21,9 @@ def productsClient():
     #     print(u.__dict__)
 
     for product in productsData:
+        variants = json.loads(product.variants)
         # Retrive the price range from variants, if the price is none
-        if product.price is None:
-            variants = json.loads(product.variants)
+        if len(variants) > 0:
             price = getPriceRangeFromVariants(variants)
         else:
             price = product.price
@@ -43,8 +43,10 @@ def productClient():
     product = getProductByProductId(int(productid))
     print('product', product)
 
-    if product.price is None:
-        variants = json.loads(product.variants)
+    # Retrieve variants
+    variants = json.loads(product.variants)
+
+    if len(variants) > 0:
         price = getPriceRangeFromVariants(variants)
     else:
         price = product.price
@@ -62,6 +64,14 @@ def productClient():
 def getProducts():
     if isUserAdmin():
         products = Product.query.all()
+
+        for product in products:
+            variants = json.loads(product.variants)
+            # Retrive the price range from variants, if the price is none
+            if len(variants) > 0:
+                product.price = getPriceRangeFromVariants(variants)
+            else:
+                product.price = product.price
         return render_template('adminProducts.html', products=products)
     return redirect(url_for('auth.login_admin'))
 

@@ -37,10 +37,12 @@ def get_category_and_products_for_client():
     # Get products data saved in the res object
     products = []
     for product in products_by_categoryId:
+        # Retrieve product
         product = product[0]
+        # Retrieve variants
+        variants = json.loads(product.variants)
         # Retrive the price range from variants, if the price is none
-        if product.price is None:
-            variants = json.loads(product.variants)
+        if len(variants) > 0:
             price = getPriceRangeFromVariants(variants)
         else:
             price = product.price
