@@ -1,6 +1,16 @@
 from ecommerce_blueprint_version import db
 from ecommerce_blueprint_version.models import Order, OrderedProduct, Product
 
+from openpyxl import load_workbook
+
+def convert_float_to_int(float_number):
+   return int(float_number) if float_number and isinstance(float_number, float) else float_number
+
+def import_excel(excel):
+   wb = load_workbook(excel)
+   sheet = wb[wb.sheetnames[-2]]
+   return sheet.iter_rows(min_col=2, values_only=True)
+
 def get_orders(current_user):
    orders = Order.query.join(OrderedProduct, Order.orderid == OrderedProduct.orderid) \
         .join(Product, OrderedProduct.productid == Product.productid) \

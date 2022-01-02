@@ -1,9 +1,31 @@
-from flask import request, Blueprint, jsonify
+from flask import request, Blueprint, jsonify, redirect, url_for, render_template
 
 orders = Blueprint('orders', __name__)
 
-from ecommerce_blueprint_version.auth.utils import token_required
-from ecommerce_blueprint_version.orders.utils import place_order, get_orders
+from ecommerce_blueprint_version.auth.utils import token_required, isUserAdmin
+from ecommerce_blueprint_version.orders.utils import place_order, get_orders, import_excel, convert_float_to_int
+from ecommerce_blueprint_version.orders.forms import importExcelForm
+
+
+@orders.route("/admin/importExcel", methods=['GET', 'POST'])
+def importExcel():
+    if isUserAdmin():
+        form = importExcelForm()
+        if form.validate_on_submit():
+            sheetValues = import_excel(form.excel_file.data)
+            if form.confirm.data:
+                print(form.confirm.data)
+                # category = Category(category_name_zh=form.category_name_zh.data, category_name_en=form.category_name_en.data,
+                #                     category_name_fr=form.category_name_fr.data, category_img=category_icon,
+                #                     )
+                # db.session.add(category)
+                # db.session.commit()
+                # return redirect(url_for('admin.html'))
+                return render_template("importExcel.html", form=form, sheetValues=sheetValues, convert_float_to_int=convert_float_to_int, uploadSuccess=True)
+            return render_template("importExcel.html", form=form, sheetValues=sheetValues, convert_float_to_int=convert_float_to_int)
+        return render_template("importExcel.html", form=form)
+    return redirect(url_for('auth.login_admin'))
+
 
 @orders.route("/placeOrder", methods=['GET', 'POST'])
 @token_required
