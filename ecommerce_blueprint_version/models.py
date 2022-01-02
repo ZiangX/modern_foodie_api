@@ -99,6 +99,7 @@ class Order(db.Model):
     total_price = db.Column(db.FLOAT, nullable=False)
     userid = db.Column(db.Integer, db.ForeignKey(
         'user.userid'), nullable=False)
+    note = db.Column(db.String(100), nullable=True)
 
 
 
@@ -118,3 +119,15 @@ class OrderedProduct(db.Model):
     price = db.Column(db.FLOAT, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     sum = db.Column(db.FLOAT, nullable=False)
+
+
+class WeChatOrder(db.Model):
+    __table_args__ = {'extend_existing': True}
+    id = db.Column(db.Integer, primary_key=True)
+    wechat_name = db.Column(db.String(100), nullable=True)
+    recipient = db.Column(db.String(100), nullable=True)
+    phone = db.Column(db.Integer, nullable=False)
+    orderedProducts = db.Column(db.JSON, nullable=True)
+    price = db.Column(db.FLOAT, nullable=False)
+    note = db.Column(db.String(100), nullable=True)
+    address = db.Column(db.String(100), nullable=True)
