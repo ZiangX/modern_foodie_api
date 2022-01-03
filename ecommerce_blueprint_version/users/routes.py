@@ -11,9 +11,11 @@ users = Blueprint('users', __name__)
 @token_required
 def user_info(current_user):
     if request.method == 'GET':
-        return jsonify({"userInfo": {"username": current_user.username, "fname": current_user.fname, "lname": current_user.lname, "address": current_user.address, "city": current_user.city, "province": current_user.province,
-                                        "country": current_user.country, "postcode": current_user.postcode, "email": current_user.email, "phone": current_user.phone
-                                        }}), 200
+        sign_in_from_facebook = True if current_user.facebook_uid else False
+
+        return jsonify({"userInfo": {"username": current_user.username, "sign_in_from_facebook": sign_in_from_facebook, "address": current_user.address, "city": current_user.city, 
+            "province": current_user.province, "postcode": current_user.postcode, "email": current_user.email, "phone": current_user.phone
+        }}), 200
     else:
         # Email and username cannot have duplicates
         newUserInfo = request.get_json()

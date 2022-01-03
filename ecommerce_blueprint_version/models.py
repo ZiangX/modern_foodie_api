@@ -19,6 +19,7 @@ class User(db.Model):
     country = db.Column(db.String(20), unique=False, nullable=True)
     postcode = db.Column(db.String(20), unique=False, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    facebook_uid = db.Column(db.String(50), unique=True, nullable=True)
     # When ppl remove the phone, we need to allow many empty string fields exisiting at the same time
     phone = db.Column(db.Integer, unique=False, nullable=True)
     phone_verification_code = db.Column(db.Integer, unique=False, nullable=True)

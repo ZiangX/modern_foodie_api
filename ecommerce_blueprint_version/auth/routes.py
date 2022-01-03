@@ -34,9 +34,6 @@ def register():
     if User.query.filter(User.email == email).first():
         return 'email_taken', 400
 
-    if User.query.filter(User.username == username).first():
-        return 'username_taken', 400
-
     user = User(username=username, password=hashlib.md5(
         password.encode()).hexdigest(), email=email, public_id=random.randrange(10000000, 100000000, 2))
     db.session.add(user)
@@ -55,12 +52,39 @@ def login():
     if user is None:
         return 'not_find_email', 400
     else:
-        if not user.password == hashlib.md5(password.encode()).hexdigest():
+        if user.password != hashlib.md5(password.encode()).hexdigest():
             return 'password_not_correct', 400
         else:
             token = jwt.encode({'public_id': user.public_id}, current_app.config['SECRET_KEY'], "HS256")
             return jsonify({'token': token.decode("utf-8")}), 200
 
+
+@auth.route("/fb-signin", methods=['POST'])
+def fb_signin():
+    formData = request.get_json()
+    facebook_uid, username, email = formData.get('facebook_uid'), formData.get('username'), formData.get('email')
+
+    if not username:
+        return 'username_missing', 400
+    elif not email:
+        return 'email_missing', 400
+    elif not facebook_uid:
+        return 'sign_in_fail_please_contact_us', 400
+
+    user = User.query.filter(User.email == email).first()
+    print(user)
+    if user is None:
+        # Create new account
+        user = User(username=username, password="temporary_password".hexdigest(), 
+            email=email, public_id=random.randrange(10000000, 100000000, 2), facebook_uid=facebook_uid)
+        db.session.add(user)
+        db.session.commit()
+    else:
+        if user.facebook_uid != facebook_uid:
+            return 'email_of_this_facebook_has_been_registered', 400
+        
+    token = jwt.encode({'public_id': user.public_id}, current_app.config['SECRET_KEY'], "HS256")
+    return jsonify({'token': token.decode("utf-8")}), 200
 
 @auth.route("/login-admin", methods=['POST', 'GET'])
 def login_admin():
