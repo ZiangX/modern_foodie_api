@@ -75,7 +75,7 @@ def fb_signin():
     print(user)
     if user is None:
         # Create new account
-        user = User(username=username, password="temporary_password".hexdigest(), 
+        user = User(username=username, password="temporary_password", 
             email=email, public_id=random.randrange(10000000, 100000000, 2), facebook_uid=facebook_uid)
         db.session.add(user)
         db.session.commit()
