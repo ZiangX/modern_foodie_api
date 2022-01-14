@@ -125,10 +125,11 @@ class OrderedProduct(db.Model):
 class WeChatOrder(db.Model):
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, nullable=False)
     wechat_name = db.Column(db.String(100), nullable=True)
     recipient = db.Column(db.String(100), nullable=True)
-    phone = db.Column(db.Integer, nullable=False)
-    orderedProducts = db.Column(db.JSON, nullable=True)
-    price = db.Column(db.FLOAT, nullable=False)
+    phone = db.Column(db.String(100), nullable=True)
+    orderedProducts = db.Column(db.String(100), nullable=True)
+    price = db.Column(db.String(100), nullable=True)
     note = db.Column(db.String(100), nullable=True)
     address = db.Column(db.String(100), nullable=True)

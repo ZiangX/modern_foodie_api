@@ -1,5 +1,5 @@
 from ecommerce_blueprint_version import db
-from ecommerce_blueprint_version.models import Order, OrderedProduct, Product
+from ecommerce_blueprint_version.models import Order, OrderedProduct, Product, WeChatOrder
 
 from openpyxl import load_workbook
 
@@ -9,7 +9,7 @@ def convert_float_to_int(float_number):
 def import_excel(excel):
    wb = load_workbook(excel)
    sheet = wb[wb.sheetnames[-2]]
-   return sheet.iter_rows(min_col=2, values_only=True)
+   return sheet.iter_rows(min_row=2, min_col=2, values_only=True)
 
 def get_orders(current_user):
    orders = Order.query.join(OrderedProduct, Order.orderid == OrderedProduct.orderid) \

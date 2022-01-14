@@ -5,7 +5,7 @@
         {{ form.hidden_tag() }}
 
         <div class="alert alert-{{'success' if uploadSuccess else 'danger'}}" role="alert">
-            {{ uploadSuccess if "Upload success" else "Have not uploaded yet"}}
+            {{ "Upload success" if uploadSuccess else "Have not uploaded yet"}}
         </div>
 
         <div class="form-group">

@@ -3,7 +3,7 @@ from flask import request, Blueprint, jsonify, redirect, url_for, render_templat
 orders = Blueprint('orders', __name__)
 
 from ecommerce_blueprint_version.auth.utils import token_required, isUserAdmin
-from ecommerce_blueprint_version.orders.utils import place_order, get_orders, import_excel, convert_float_to_int
+from ecommerce_blueprint_version.orders.utils import *
 from ecommerce_blueprint_version.orders.forms import importExcelForm
 
 
@@ -14,18 +14,34 @@ def importExcel():
         if form.validate_on_submit():
             sheetValues = import_excel(form.excel_file.data)
             if form.confirm.data:
-                print(form.confirm.data)
-                # category = Category(category_name_zh=form.category_name_zh.data, category_name_en=form.category_name_en.data,
-                #                     category_name_fr=form.category_name_fr.data, category_img=category_icon,
-                #                     )
-                # db.session.add(category)
-                # db.session.commit()
-                # return redirect(url_for('admin.html'))
+                order_id, wechat_name, recipient, phone, price, note, address = '', '', '', '', '', '', ''
+                for value in sheetValues:
+                    # if order id is not null and different than the last row
+                    if value[0] and order_id != value[0]:
+                        order_id, wechat_name, recipient, phone = value[0:4]
+                        price, note, address = value[5:]
+                        # Convert order_id to int
+                        if isinstance(order_id, float):
+                            order_id = convert_float_to_int(order_id)
+                        # convert order_id from string to int, and filter out the non numeric letter
+                        if isinstance(order_id, str):
+                            numeric_filter = filter(str.isdigit, order_id)
+                            order_id = int("".join(numeric_filter))
+
+
+                    ordered_product = value[4]
+                    price = value[5] if value[5] else price                  
+                    print(order_id, wechat_name, recipient, phone, ordered_product, price, note, address)
+                    order = WeChatOrder(order_id=order_id, wechat_name=wechat_name, recipient=recipient, 
+                        phone=phone, orderedProducts=ordered_product, price=price, note=note, address=address
+                    )
+                    db.session.add(order)
+                    db.session.commit()
                 return render_template("importExcel.html", form=form, sheetValues=sheetValues, convert_float_to_int=convert_float_to_int, uploadSuccess=True)
             return render_template("importExcel.html", form=form, sheetValues=sheetValues, convert_float_to_int=convert_float_to_int)
         return render_template("importExcel.html", form=form)
     return redirect(url_for('auth.login_admin'))
-
+    
 
 @orders.route("/placeOrder", methods=['GET', 'POST'])
 @token_required
@@ -45,6 +61,15 @@ def placeOrder(current_user):
 @orders.route("/orders")
 @token_required
 def getOrders(current_user):
+    if current_user.email == 'ziangxuu@gmail.com':
+        wechat_orders = WeChatOrder.query.all()
+        formated_wechat_orders = []
+        for order in wechat_orders:
+            formated_wechat_orders.append({"order_id": order.order_id, "wechat_name": order.wechat_name, "recipient": order.recipient, 
+                "phone": order.phone, "orderedProducts": order.orderedProducts, "price": order.price, "note": order.note, "address": order.address})
+        print(formated_wechat_orders)
+        return jsonify({"formated_wechat_orders": formated_wechat_orders}), 200
+
     ordersData = get_orders(current_user)
 
     ordered_products = []

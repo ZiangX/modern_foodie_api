@@ -67,4 +67,4 @@ def create_app(config_class=Config):
     return app
 
 # Create all models, but generated tables does not setup foreign keys properly
-# db.create_all(app=create_app())
+db.create_all(app=create_app())
