@@ -62,7 +62,7 @@ def placeOrder(current_user):
 @token_required
 def getOrders(current_user):
     if current_user.email == 'ziangxuu@gmail.com':
-        order_id = int(request.args.get('orderId'))
+        order_id = int(request.args.get('orderId')) if request.args.get('orderId') else None
         if order_id:
             print(order_id)
             wechat_orders = WeChatOrder.query.filter(WeChatOrder.order_id==order_id).all()
