@@ -62,12 +62,17 @@ def placeOrder(current_user):
 @token_required
 def getOrders(current_user):
     if current_user.email == 'ziangxuu@gmail.com':
-        wechat_orders = WeChatOrder.query.all()
+        order_id = int(request.args.get('orderId'))
+        if order_id:
+            print(order_id)
+            wechat_orders = WeChatOrder.query.filter(WeChatOrder.order_id==order_id).all()
+        else:
+            wechat_orders = WeChatOrder.query.all()
         formated_wechat_orders = []
         for order in wechat_orders:
             formated_wechat_orders.append({"order_id": order.order_id, "wechat_name": order.wechat_name, "recipient": order.recipient, 
                 "phone": order.phone, "orderedProducts": order.orderedProducts, "price": order.price, "note": order.note, "address": order.address})
-        print(formated_wechat_orders)
+        # print(formated_wechat_orders)
         return jsonify({"formated_wechat_orders": formated_wechat_orders}), 200
 
     ordersData = get_orders(current_user)

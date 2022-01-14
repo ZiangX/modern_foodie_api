@@ -129,7 +129,7 @@ def update_password(current_user):
 def request_reset_password():
     requestData = request.get_json()
     email = requestData.get("email")
-    user = User.query.filter(email==email).first()
+    user = User.query.filter(User.email==email).first()
     if user:
         send_reset_email(user)
         return "reset_email_sent", 200
