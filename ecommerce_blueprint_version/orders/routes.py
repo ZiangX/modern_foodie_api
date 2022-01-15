@@ -61,7 +61,7 @@ def placeOrder(current_user):
 @orders.route("/orders")
 @token_required
 def getOrders(current_user):
-    if current_user.email in ['ziangxuu@gmail.com', 'modernfoodieMTL@gmail.com']:
+    if current_user.email in ['ziangxuu@gmail.com', 'modernfoodieMTL@gmail.com', 'jaytq19921228@gmail.com']:
         order_id = int(request.args.get('orderId')) if request.args.get('orderId') else None
         if order_id:
             print(order_id)
