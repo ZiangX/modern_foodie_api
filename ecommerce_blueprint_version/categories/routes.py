@@ -47,7 +47,7 @@ def get_category_and_products_for_client():
         else:
             price = product.price
         products.append({
-            "productid": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en,
+            "id": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en,
             "product_name_fr": product.product_name_fr, "price": price, "imgs": json.loads(product.product_imgs)
         })
 
