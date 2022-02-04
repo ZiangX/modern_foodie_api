@@ -51,7 +51,7 @@ def productClient():
         price = product.price
 
     productDetail = {
-        "productid": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en,
+        "id": product.productid, "product_name_zh": product.product_name_zh, "product_name_en": product.product_name_en,
         "product_name_fr": product.product_name_fr, "description_zh": product.description_zh, "description_en": product.description_en,
         "description_fr": product.description_fr, "price": price, "imgs": json.loads(product.product_imgs), "variants": json.loads(product.variants)
     }
