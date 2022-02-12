@@ -38,7 +38,8 @@ def send_code(current_user):
     else:
         code, phone = request.get_json().get("code"), request.get_json().get("phone")
         try:
-            code, phone = int(code.replace(" ", "")), int(phone.replace(" ", ""))
+            code = int(code.replace(" ", ""))
+            print("code is", code)
         except:
             return "code_malformed", 400
 
