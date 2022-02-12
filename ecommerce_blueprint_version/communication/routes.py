@@ -29,7 +29,7 @@ def send_code(current_user):
         generated_code = random.randrange(100000, 1000000, 2)
         client.messages.create(  
             messaging_service_sid=current_app.config['MESSAGING_SERVICE_SID'], 
-            body=message + str(generated_code),
+            body=f"{message} {str(generated_code)}",
             to=target_phone 
         )
         User.query.filter_by(userid=current_user.userid).update({"phone_verification_code": generated_code, "phone_verification_code_sent_time": datetime.utcnow()})
