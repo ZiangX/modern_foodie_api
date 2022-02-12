@@ -36,14 +36,15 @@ def send_code(current_user):
         db.session.commit()
         return "code_sent", 200
     else:
-        code = request.get_json().get("code")
+        code, phone = request.get_json().get("code"), request.get_json().get("phone")
         try:
-            code = code.replace(" ", "")
-            code = int(code)
+            code, phone = int(code.replace(" ", "")), int(phone.replace(" ", ""))
         except:
             return "code_malformed", 400
 
         if current_user.phone_verification_code == code:
+            User.query.filter_by(userid=current_user.userid).update({"phone": phone})
+            db.session.commit()
             return "code_correct", 200
         return "code_incorrect", 400
 
