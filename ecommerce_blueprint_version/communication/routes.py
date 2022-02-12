@@ -18,14 +18,7 @@ def send_code(current_user):
 
         account_sid = current_app.config['TWILIO_ACCOUNT_SID'] 
         auth_token = current_app.config['TWILIO_AUTH_TOKEN']
-        client = Client(account_sid, auth_token) 
-        
-        message = client.messages.create(  
-                                    messaging_service_sid=current_app.config['MESSAGING_SERVICE_SID'], 
-                                    body=message,      
-                                    to=target_phone 
-                                )
-
+        client = Client(account_sid, auth_token)
 
         # Prevent someone from abusing api
         if current_user.phone_verification_code_sent_time:
@@ -34,6 +27,11 @@ def send_code(current_user):
                 return jsonify({'next_request_waiting_time': 60 - request_interval}), 400
 
         generated_code = random.randrange(100000, 1000000, 2)
+        client.messages.create(  
+            messaging_service_sid=current_app.config['MESSAGING_SERVICE_SID'], 
+            body=message + generated_code,      
+            to=target_phone 
+        )
         User.query.filter_by(userid=current_user.userid).update({"phone_verification_code": generated_code, "phone_verification_code_sent_time": datetime.utcnow()})
         db.session.commit()
         return "code_sent", 200
