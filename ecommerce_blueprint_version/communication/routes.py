@@ -13,8 +13,8 @@ communication = Blueprint('communication', __name__)
 @token_required
 def send_code(current_user):
     if request.method == 'GET':
-        target_phone, message = request.get_json().get("phone"), request.get_json().get("message")
-        # print('info', target_phone, message)
+        target_phone, message = request.args.get("phone"), request.args.get("message")
+        print('info', target_phone, message)
 
         account_sid = current_app.config['TWILIO_ACCOUNT_SID'] 
         auth_token = current_app.config['TWILIO_AUTH_TOKEN']
