@@ -20,11 +20,11 @@ def send_code(current_user):
         auth_token = current_app.config['TWILIO_AUTH_TOKEN']
         client = Client(account_sid, auth_token) 
         
-        # message = client.messages.create(  
-        #                             messaging_service_sid=current_app.config['MESSAGING_SERVICE_SID'], 
-        #                             body=message,      
-        #                             to=target_phone 
-        #                         )
+        message = client.messages.create(  
+                                    messaging_service_sid=current_app.config['MESSAGING_SERVICE_SID'], 
+                                    body=message,      
+                                    to=target_phone 
+                                )
 
 
         # Prevent someone from abusing api
