@@ -42,7 +42,7 @@ def send_code(current_user):
             print("code is", code)
         except:
             return "code_malformed", 400
-
+        print('print code', code, equest.get_json().get("code"), request.get_json().get("phone"))
         if current_user.phone_verification_code == code:
             User.query.filter_by(userid=current_user.userid).update({"phone": phone})
             db.session.commit()
