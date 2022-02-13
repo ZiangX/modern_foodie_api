@@ -43,6 +43,7 @@ def send_code(current_user):
         except:
             return "code_malformed", 400
         print('print code', code, request.get_json().get("code"), request.get_json().get("phone"))
+        print('print type', type(request.get_json().get("code")), current_user.phone_verification_code, type(current_user.phone_verification_code))
         if current_user.phone_verification_code == code:
             User.query.filter_by(userid=current_user.userid).update({"phone": phone})
             db.session.commit()
