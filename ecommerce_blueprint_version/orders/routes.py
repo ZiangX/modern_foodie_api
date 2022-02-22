@@ -96,7 +96,7 @@ def getOrders(current_user):
         })
         # When the orderid is different to the next one or it is the last one
         if next_orderid is None or orderid != next_orderid:
-            orders.append({"orderid": orderid, "order_date": order_date,
+            orders.append({"order_id": orderid, "order_date": order_date,
                             "total_price": total_price, "ordered_products": ordered_products})
             ordered_products = []
     return jsonify({"orders": orders}), 200
