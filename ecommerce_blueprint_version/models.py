@@ -21,7 +21,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     facebook_uid = db.Column(db.String(50), unique=True, nullable=True)
     # When ppl remove the phone, we need to allow many empty string fields exisiting at the same time
-    phone = db.Column(db.Integer, unique=False, nullable=True)
+    phone = db.Column(db.String(20), unique=False, nullable=True)
     phone_verification_code = db.Column(db.Integer, unique=False, nullable=True)
     phone_verification_code_sent_time = db.Column(db.DateTime, unique=False, nullable=True)
     created_on = db.Column(db.DateTime, nullable=False,
@@ -100,7 +100,8 @@ class Order(db.Model):
     total_price = db.Column(db.FLOAT, nullable=False)
     userid = db.Column(db.Integer, db.ForeignKey(
         'user.userid'), nullable=False)
-    note = db.Column(db.String(100), nullable=True)
+    address = db.Column(db.String(100), nullable=False)
+    note = db.Column(db.Text, nullable=True)
 
 
 

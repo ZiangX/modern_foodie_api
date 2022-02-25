@@ -48,10 +48,10 @@ def importExcel():
 def placeOrder(current_user):
     # Get all request data
     req = request.get_json()
-    orderData, totalPrice = req.get('orderData'), req.get('totalPrice')
+    orderData, totalPrice, address, note = req.get('orderData'), req.get('totalPrice'), req.get('address'), req.get('note')
 
     # TODO in the frontend, make sure the order request passed in is in Chinese
-    username, ordernumber = place_order(current_user, orderData, totalPrice)
+    username, ordernumber = place_order(current_user, orderData, totalPrice, address, note)
     # if email:
     #     sendEmailconfirmation(
     #         email, username, ordernumber, phonenumber, provider)

@@ -26,14 +26,14 @@ def get_orders(current_user):
    return orders
 
 # Gets form data for the sales transaction
-def place_order(current_user, orderData, totalPrice):
+def place_order(current_user, orderData, totalPrice, address, note):
 
    # TODO Need to check the user is logged in or not when entering the checkout page in the frontend
    # Since using with_entities, the result will be a tuple, we need to get the first element by using index 0
    userId, username = current_user.userid, current_user.username
 
    # This part simply create an order with order date, total_price and userId
-   order = Order(total_price=totalPrice, userid=userId)
+   order = Order(total_price=totalPrice, userid=userId, address=address, note=note)
    db.session.add(order)
    db.session.flush()
    db.session.commit()
