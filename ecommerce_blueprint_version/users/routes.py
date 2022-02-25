@@ -24,9 +24,9 @@ def user_info(current_user):
         email = newUserInfo.get("email")
         phone = newUserInfo.get("phone")
         print(current_user.phone, phone, current_user.email, email)
-        if current_user.email != email and User.query.filter(User.email == email).first():
+        if email and current_user.email != email and User.query.filter(User.email == email).first():
             return 'email_taken', 400
-        if current_user.phone != phone and User.query.filter(User.phone == phone).first():
+        if phone and current_user.phone != phone and User.query.filter(User.phone == phone).first():
             return 'phone_taken', 400
 
         # If adding .first(), it wont work, since the update property dont work with that
