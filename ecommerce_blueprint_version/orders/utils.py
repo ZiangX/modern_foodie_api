@@ -14,7 +14,7 @@ def import_excel(excel):
 def get_orders(current_user):
    orders = Order.query.join(OrderedProduct, Order.orderid == OrderedProduct.orderid) \
         .join(Product, OrderedProduct.productid == Product.productid) \
-        .with_entities(Order.orderid, Order.order_date, Order.total_price,
+        .with_entities(Order.orderid, Order.order_date, Order.total_price, Order.address, Order.note,
                         Product.productid, Product.product_name_zh, Product.product_name_en, Product.product_name_fr,
                         OrderedProduct.variant_name_zh, OrderedProduct.variant_name_en, OrderedProduct.variant_name_fr, OrderedProduct.price,
                         OrderedProduct.quantity, OrderedProduct.sum
@@ -31,7 +31,7 @@ def place_order(current_user, orderData, totalPrice, address, note):
    # TODO Need to check the user is logged in or not when entering the checkout page in the frontend
    # Since using with_entities, the result will be a tuple, we need to get the first element by using index 0
    userId, username = current_user.userid, current_user.username
-
+   print('order data', address, note)
    # This part simply create an order with order date, total_price and userId
    order = Order(total_price=totalPrice, userid=userId, address=address, note=note)
    db.session.add(order)
