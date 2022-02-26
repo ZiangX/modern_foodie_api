@@ -82,7 +82,7 @@ def getOrders(current_user):
 
     for i in range(len(ordersData)):
         print(i, ordersData[i])
-        orderid, order_date, total_price, productid, product_name_zh, product_name_en, product_name_fr, variant_name_zh, variant_name_en, variant_name_fr, price, quantity, sum = ordersData[
+        orderid, order_date, total_price, address, note, productid, product_name_zh, product_name_en, product_name_fr, variant_name_zh, variant_name_en, variant_name_fr, price, quantity, sum = ordersData[
             i]
         if i != len(ordersData)-1:
             next_orderid = ordersData[i+1][0]
@@ -96,7 +96,7 @@ def getOrders(current_user):
         })
         # When the orderid is different to the next one or it is the last one
         if next_orderid is None or orderid != next_orderid:
-            orders.append({"order_id": orderid, "order_date": order_date,
+            orders.append({"order_id": orderid, "order_date": order_date, "address": address, "note": note,
                             "total_price": total_price, "ordered_products": ordered_products})
             ordered_products = []
     return jsonify({"orders": orders}), 200
