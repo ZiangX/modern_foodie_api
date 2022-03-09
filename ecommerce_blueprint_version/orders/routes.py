@@ -92,7 +92,7 @@ def getOrders(current_user):
         ordered_products.append({
             "product_name_zh": product_name_zh, "product_name_en": product_name_en, "product_name_fr": product_name_fr,
             "variant_name_zh": variant_name_zh, "variant_name_en": variant_name_en, "variant_name_fr": variant_name_fr,
-            "price": price, "quantity": quantity, "sum": sum
+            "productid": productid, "price": price, "quantity": quantity, "sum": sum
         })
         # When the orderid is different to the next one or it is the last one
         if next_orderid is None or orderid != next_orderid:
