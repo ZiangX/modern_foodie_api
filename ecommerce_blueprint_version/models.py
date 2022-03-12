@@ -101,6 +101,7 @@ class Order(db.Model):
     userid = db.Column(db.Integer, db.ForeignKey(
         'user.userid'), nullable=False)
     address = db.Column(db.String(100), nullable=False)
+    shipping_fee = db.Column(db.Integer, nullable=False)
     note = db.Column(db.Text, nullable=True)
 
 

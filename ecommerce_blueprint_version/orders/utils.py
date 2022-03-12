@@ -14,7 +14,7 @@ def import_excel(excel):
 def get_orders(current_user):
    orders = Order.query.join(OrderedProduct, Order.orderid == OrderedProduct.orderid) \
         .join(Product, OrderedProduct.productid == Product.productid) \
-        .with_entities(Order.orderid, Order.order_date, Order.total_price, Order.address, Order.note,
+        .with_entities(Order.orderid, Order.order_date, Order.total_price, Order.address, Order.shipping_fee, Order.note,
                         Product.productid, Product.product_name_zh, Product.product_name_en, Product.product_name_fr,
                         OrderedProduct.variant_name_zh, OrderedProduct.variant_name_en, OrderedProduct.variant_name_fr, OrderedProduct.price,
                         OrderedProduct.quantity, OrderedProduct.sum
