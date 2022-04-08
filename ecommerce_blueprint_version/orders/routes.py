@@ -43,7 +43,7 @@ def importExcel():
     return redirect(url_for('auth.login_admin'))
     
 
-@orders.route("/placeOrder", methods=['GET', 'POST'])
+@orders.route("/placeOrder", methods=['POST'])
 @token_required
 def placeOrder(current_user):
     # Get all request data
@@ -56,6 +56,17 @@ def placeOrder(current_user):
     #     sendEmailconfirmation(
     #         email, username, ordernumber, phonenumber, provider)
     return jsonify({"orderInfo": (username, ordernumber)}), 200
+
+
+@orders.route("/cancelOrder", methods=['DELETE'])
+@token_required
+def cancelOrder(current_user):
+    # TODO Introduce higher validation mechanism in next version
+    req = request.get_json()
+    order_id = req.get('order_id')
+    cancel_order(order_id)
+
+    return jsonify({"message": "order_cancelled"}), 200
 
 
 @orders.route("/orders")
