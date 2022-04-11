@@ -52,6 +52,7 @@ def place_order(current_user, orderData, totalPrice, address, note, shipping_fee
 
 def cancel_order(order_id):
    Order.query.filter(Order.orderid == order_id).delete()
+   db.session.commit()
 
 # adds data to orderdproduct table
 
