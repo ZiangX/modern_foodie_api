@@ -65,8 +65,8 @@ def addOrderedproducts(orderid, orderData):
     # so two variants of the same product will run OrderedProduct twice
    for item in orderData:
       orderedproduct = OrderedProduct(
-         orderid=orderid, productid=item.get("productid"), variant_name_zh=item.get("variant_name_zh"), variant_name_en=item.get("variant_name_en")
-         , variant_name_fr=item.get("variant_name_fr"), price=item.get("price"), quantity=item.get("quantity"), sum=item.get("sum"))
+         orderid=orderid, productid=item.get("id"), variant_name_zh=item.get("variant_name_zh"), variant_name_en=item.get("variant_name_en")
+         , variant_name_fr=item.get("variant_name_fr"), price=item.get("price"), quantity=item.get("quantity"), sum=item.get("total"))
       db.session.add(orderedproduct)
       db.session.flush()
       db.session.commit()
