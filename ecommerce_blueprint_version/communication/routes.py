@@ -16,6 +16,11 @@ def send_code(current_user):
         target_phone, message = request.args.get("phone"), request.args.get("message")
         print('info', target_phone, message)
 
+        # Check if the phone is taken
+        phone_registered = User.query.filter_by(phone=target_phone)
+        if phone_registered:
+            return "phone_registered", 400
+
         account_sid = current_app.config['TWILIO_ACCOUNT_SID'] 
         auth_token = current_app.config['TWILIO_AUTH_TOKEN']
         client = Client(account_sid, auth_token)
