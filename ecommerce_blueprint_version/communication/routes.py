@@ -14,10 +14,11 @@ communication = Blueprint('communication', __name__)
 def send_code(current_user):
     if request.method == 'GET':
         target_phone, message = request.args.get("phone"), request.args.get("message")
-        print('info', target_phone, message)
+        
 
         # Check if the phone is taken
-        phone_registered = User.query.filter_by(phone=target_phone)
+        phone_registered = User.query.filter_by(phone=target_phone).first()
+        print('phone_registered', phone_registered)
         if phone_registered:
             return "phone_registered", 400
 
