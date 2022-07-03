@@ -2,10 +2,10 @@ from flask import current_app, url_for, redirect, request, Blueprint, jsonify
 from twilio.rest import Client
 from datetime import datetime
 import random
+from flask_mail import Message
 
-from ecommerce_blueprint_version import db
+from ecommerce_blueprint_version import db, mail
 from ecommerce_blueprint_version.auth.utils import *
-
 
 communication = Blueprint('communication', __name__)
 
@@ -56,3 +56,15 @@ def send_code(current_user):
             return "code_correct", 200
         return "code_incorrect", 400
 
+
+
+@communication.route("/sendEmail", methods=['POST'])
+def send_email(current_user):
+    error = request.get_json().get("error")
+    msg = Message('Password Reset Request',
+                  sender='Modern foodie',
+                  recipients=['ziangxuu@gmail.com'])
+    msg.body = f'''To reset your password, visit the following link:
+{error}
+'''
+    mail.send(msg)
