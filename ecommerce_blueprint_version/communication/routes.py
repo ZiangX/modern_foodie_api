@@ -67,4 +67,8 @@ def send_email():
     msg.body = f'''To reset your password, visit the following link:
 {error}
 '''
-    mail.send(msg)
+    try:
+        mail.send(msg)
+    except:
+        return "There is an error", 400
+    return "sent", 200
