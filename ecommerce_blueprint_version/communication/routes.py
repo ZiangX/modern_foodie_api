@@ -59,7 +59,7 @@ def send_code(current_user):
 
 
 @communication.route("/sendEmail", methods=['POST'])
-def send_email(current_user):
+def send_email():
     error = request.get_json().get("error")
     msg = Message('Password Reset Request',
                   sender='Modern foodie',
