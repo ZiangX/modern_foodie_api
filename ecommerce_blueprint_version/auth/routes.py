@@ -137,13 +137,14 @@ def request_reset_password():
 
 
 @auth.route("/reset_password/<token>", methods=['GET', 'POST'])
-def reset_password(token):
+def reset_password():
+    requestData = request.get_json()
+    token, password = requestData.get('token'), requestData.get('password')
     user = User.verify_reset_token(token)
     if user is None:
         return "reset_password_token_invalid", 400
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        user.password = hashlib.md5(form.password.data.encode()).hexdigest()
-        db.session.commit()
-        return "password_reset_successfully", 200
-    return render_template('reset_token.html', title='Reset Password', form=form)
+
+    user.password = hashlib.md5(password.encode()).hexdigest()
+    db.session.commit()
+    
+    return "password_reset_successfully", 200
