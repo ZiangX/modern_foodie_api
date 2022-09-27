@@ -136,7 +136,7 @@ def request_reset_password():
     return "cannot_find_email", 400
 
 
-@auth.route("/reset_password/<token>", methods=['GET', 'POST'])
+@auth.route("/reset_password", methods=['GET', 'POST'])
 def reset_password():
     requestData = request.get_json()
     token, password = requestData.get('token'), requestData.get('password')
