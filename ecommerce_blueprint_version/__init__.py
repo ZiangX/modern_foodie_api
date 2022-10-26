@@ -45,16 +45,20 @@ def create_app(config_class=Config):
 
     print('hii')
         
-    if sys.platform.startswith("darwin"):
-        oracledb.init_oracle_client(
-            lib_dir=os.environ.get("HOME")+"/Downloads/instantclient_19_8",
-            config_dir="")
-    elif sys.platform.startswith("win"):
-        oracledb.init_oracle_client(
-            lib_dir=r"C:\\Program Files\\Oracle\\instantclient_21_7")
-        print('got the file')
+    # if sys.platform.startswith("darwin"):
+    #     oracledb.init_oracle_client(
+    #         lib_dir=os.environ.get("HOME")+"/Downloads/instantclient_19_8",
+    #         config_dir="")
+    # elif sys.platform.startswith("win"):
+    #     oracledb.init_oracle_client(
+    #         lib_dir=r"C:\\Program Files\\Oracle\\instantclient_21_7")
+    #     print('got the file')
     # else assume system library search path includes Oracle Client libraries
     # On Linux, use ldconfig or set LD_LIBRARY_PATH, as described in installation documentation.
+
+    oracledb.init_oracle_client(
+        lib_dir=os.environ.get("HOME")+"/ubuntu/instantclient_21_7",
+        config_dir="")
 
     username = "admin"
     # set the password in an environment variable called "MYPW" for security
