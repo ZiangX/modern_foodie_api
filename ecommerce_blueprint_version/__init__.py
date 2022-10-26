@@ -57,7 +57,7 @@ def create_app(config_class=Config):
     # On Linux, use ldconfig or set LD_LIBRARY_PATH, as described in installation documentation.
 
     oracledb.init_oracle_client(
-        lib_dir=os.environ.get("HOME")+"/ubuntu/instantclient_21_7",
+        lib_dir=os.environ.get("HOME")+"/instantclient_21_7",
         config_dir="")
 
     username = "admin"
