@@ -63,10 +63,12 @@ class Product(db.Model):
     description_zh = db.Column(db.String(100), nullable=False)
     description_en = db.Column(db.String(100), nullable=False)
     description_fr = db.Column(db.String(100), nullable=False)
-    product_imgs = db.Column(db.JSON, nullable=False)
+    # product_imgs = db.Column(db.JSON, nullable=False)
+    product_imgs = db.Column(db.String(4000), nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     price = db.Column(db.FLOAT, nullable=True)
-    variants = db.Column(db.JSON, nullable=True)
+    variants = db.Column(db.String(4000), nullable=True)
+    # variants = db.Column(db.JSON, nullable=True)
 
 
 class ProductCategory(db.Model):

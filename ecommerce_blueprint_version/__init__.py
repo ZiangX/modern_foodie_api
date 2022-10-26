@@ -28,11 +28,46 @@ mail = Mail()
 #     traces_sample_rate=1.0
 # )
 
+print(1)
+import oracledb
+from sqlalchemy import create_engine
+import sys
+import os
+oracledb.version = "8.3.0"
+sys.modules["cx_Oracle"] = oracledb
+import cx_Oracle
 
+print(2)
+    
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    print('hii')
+        
+    if sys.platform.startswith("darwin"):
+        oracledb.init_oracle_client(
+            lib_dir=os.environ.get("HOME")+"/Downloads/instantclient_19_8",
+            config_dir="")
+    elif sys.platform.startswith("win"):
+        oracledb.init_oracle_client(
+            lib_dir=r"C:\\Program Files\\Oracle\\instantclient_21_7")
+        print('got the file')
+    # else assume system library search path includes Oracle Client libraries
+    # On Linux, use ldconfig or set LD_LIBRARY_PATH, as described in installation documentation.
+
+    username = "admin"
+    # set the password in an environment variable called "MYPW" for security
+    password = 'Nulifendou8!'
+    dsn = "modernfoodiedb_high"
+
+    engine = create_engine(
+        f'oracle://{username}:{password}@{dsn}/?encoding=UTF-8&nencoding=UTF-8', max_identifier_length=128)
+
+    with engine.connect() as conn:
+        print('connect success')
+        print(conn.scalar("select sysdate from dual"))
+        
     db.init_app(app)
     bcrypt.init_app(app)
     # login_manager.init_app(app)
@@ -55,6 +90,9 @@ def create_app(config_class=Config):
     app.register_blueprint(communication)
     # app.register_blueprint(errors)
 
+    with app.app_context():
+        db.create_all()
+
     @app.after_request
     def after_request(response):
         response.headers.set('Access-Control-Allow-Origin', '*')
@@ -66,5 +104,7 @@ def create_app(config_class=Config):
     
     return app
 
+print(3)
+
 # Create all models, but generated tables does not setup foreign keys properly
-db.create_all(app=create_app())
+# db.create_all(app=create_app())
