@@ -1,3 +1,9 @@
+import sys
+import os
+import oracledb
+oracledb.version = "8.3.0"
+sys.modules["cx_Oracle"] = oracledb
+
 import sentry_sdk
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -29,12 +35,7 @@ mail = Mail()
 # )
 
 print(1)
-import oracledb
 from sqlalchemy import create_engine
-import sys
-import os
-oracledb.version = "8.3.0"
-sys.modules["cx_Oracle"] = oracledb
 import cx_Oracle
 
 print(2)
